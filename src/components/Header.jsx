@@ -39,6 +39,7 @@ export default function Header() {
           <ul className='ulYT flex gap-4'>
             <Link href='/'>Home</Link>
             <Link href='/about'>About</Link>
+            <Link href='/about'>TESTING .git</Link>
 
             {/* <Link href='/sign-in'>Sign In</Link> */}
 
