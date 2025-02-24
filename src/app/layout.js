@@ -25,6 +25,7 @@ export default function RootLayout({ children }) {
         <body className={`${geistSans.variable} ${geistMono.variable}`}>
 
           <h1>h1 added fro testing</h1>
+          <h3>h3 JUST FOR TESTING</h3>
 
           <ClerkLoading>
             {/* <Loader /> */}

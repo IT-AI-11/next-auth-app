@@ -19,7 +19,7 @@ import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 
 export default function Header() {
   return (
-    <header className='header-test headerYT bg-gradient-to-r from-blue-300 to-purple-400 shadow-lg'>
+    <header className='header-test-2222 header-test headerYT bg-gradient-to-r from-blue-300 to-purple-400 shadow-lg'>
 
       <div className=' logoYT max-w-6xl mx-auto flex justify-between items-center p-3'>
         {/* logo */}
