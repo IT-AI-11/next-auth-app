@@ -5,6 +5,7 @@ export default function Home() {
   return (
     <div >
          <h1> HOME page, Auth project with YT Sahand</h1>
+         <h2>h2 tag added for testing</h2>
     </div>
   );
 }
