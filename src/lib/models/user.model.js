@@ -38,3 +38,8 @@ const userSchema = new mongoose.Schema(
 const User = mongoose.models.User || mongoose.model('User', userSchema); // 'User' это название collection в MongoDB
 
 export default User;
+
+
+
+
+
