@@ -42,7 +42,7 @@ export const createOrUpdateUser = async (
       return user;
 
     } catch (error) {
-      console.log('Deleted second project on Vercel passw:', error);
+      console.log('Deleted 111 second project on Vercel passw:', error);
     }
   };
   
