@@ -40,7 +40,7 @@ export const createOrUpdateUser = async (
       return user;
 
     } catch (error) {
-      console.log('Error creating or updating user 999:', error);
+      console.log('Error creating or updating 999 user 999:', error);
     }
   };
   
