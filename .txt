@@ -7,3 +7,8 @@ https://www.youtube.com/watch?v=REfusFIsd2g&t=39s
 https://github.com/sahandghavidel/next-auth-app
 
 в проекте полное соединение Clerk + GitHub Repositiry using .git + Vercel hosting + MongoDB
+
+
+ПОКА НЕ ПОЛУЧИЛОСЬ ЭТОТ ПРОЕКТ закончить
+не ПОЛУЧИЛОСЬ в MongoDB добавлять
+остальное все ПОЛУЧИЛОСЬ
