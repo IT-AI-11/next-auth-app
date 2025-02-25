@@ -55,6 +55,6 @@ export const createOrUpdateUser = async (
       await User.findOneAndDelete({ clerkId: id }); // этот id из Clerk берется через Schema "User" clerkId
 
     } catch (error) {
-      console.log('Error deleting user:', error);
+      console.log('Error deleting user 99 error99:', error);
     }
   };
