@@ -6,32 +6,10 @@
 
 
 
-const response = await fetch(`http://localhost:3000/api/users/create`,
-
-  {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      username: 'test user1',
-      email: 'test@test1.com',
-    })
-  });
-  
-  const data = response.json()
-  console.log(data)
-
 
 
 
 export default function Home() {
-
-
-
-
-
-
 
 
   return (
