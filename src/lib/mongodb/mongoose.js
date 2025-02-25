@@ -74,7 +74,7 @@ const connect = async () => {
 
   try {
     mongoose.connect(MONGODB_URI, {
-      dbName: "next14restapi",
+      dbName: "next-auth-app",
       bufferCommands: true,
     });
     console.log("Connected to MONGODB");
