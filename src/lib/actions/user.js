@@ -3,7 +3,7 @@
 
 import User from "../models/user.model";
 //import { connect } from '../mongodb/mongoose';
-import  connect  from "../mongodb/mongoose";
+import  {connect}  from "../mongodb/mongoose";
 
 
 // пойдет в api/webhooks/route.js
