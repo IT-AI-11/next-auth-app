@@ -46,8 +46,8 @@ export async function POST(req) {
     })
 
   } catch (err) {
-    console.error('Error: Could not verify webhook:', err)
-    return new Response('Error: Verification error', {
+    console.error('Error: 111 Could not verify webhook:', err)
+    return new Response('Error: 222 Verification error', {
       status: 400,
     })
   }
