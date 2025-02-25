@@ -42,7 +42,7 @@ export const createOrUpdateUser = async (
       return user;
 
     } catch (error) {
-      console.log('Error 999 999 11111 999 creating or updating 999 user 999:', error);
+      console.log('Error 999 111 222 999 11111 999 creating or updating 999 user 999:', error);
     }
   };
   
