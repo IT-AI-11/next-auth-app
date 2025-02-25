@@ -110,7 +110,7 @@ if (eventType === 'user.created' || eventType === 'user.updated') {
       });
 
     } catch (error) {
-      console.log('Error deleting user:', error);
+      console.log('Error deleting user 999:', error);
       return new Response('Error occured', {
         status: 400,
       });
