@@ -208,6 +208,10 @@
 
 
 
+// ЭТОТ WEBHOOK приходит из Clerk с этой страницы
+// https://clerk.com/docs/webhooks/sync-data
+// start === и end === уже сами дописывали 
+
 
 //import { createOrUpdateUser, deleteUser } from '@/lib/actions/user'
 import { createOrUpdateUser, deleteUser } from '@/lib/actions/user'
@@ -217,6 +221,7 @@ import { headers } from 'next/headers'
 //import { WebhookEvent } from '@clerk/nextjs/server'
 
 export async function POST(req) {
+
   const SIGNING_SECRET = process.env.SIGNING_SECRET
 
   if (!SIGNING_SECRET) {
@@ -225,7 +230,7 @@ export async function POST(req) {
 
   // Create new Svix instance with secret
   const wh = new Webhook(SIGNING_SECRET)
-  console.log(wh)
+  //console.log(wh)
 
   // Get headers
   const headerPayload = await headers()
@@ -243,8 +248,8 @@ export async function POST(req) {
   // Get body
   const payload = await req.json()
   const body = JSON.stringify(payload)
-  console.log(payload)
-  console.log(body)
+  //console.log(payload)
+  //console.log(body)
 
   let evt
 
@@ -255,7 +260,7 @@ export async function POST(req) {
       'svix-timestamp': svix_timestamp,
       'svix-signature': svix_signature,
     }) 
-    console.log(evt)
+    //console.log(evt)
 
   } catch (err) {
     console.error('Error: Could not verify webhook:', err)
