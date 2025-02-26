@@ -210,7 +210,7 @@
 
 
 //import { createOrUpdateUser, deleteUser } from '@/lib/actions/user'
-//import { createOrUpdateUser, deleteUser } from '@/lib/actions/user'
+import { createOrUpdateUser, deleteUser } from '@/lib/actions/user'
 
 import { Webhook } from 'svix'
 import { headers } from 'next/headers'
@@ -289,6 +289,7 @@ export async function POST(req) {
       return new Response('User is created or updated', {
         status: 200,
       });
+
     } catch (error) {
       console.log('Error creating or updating user:', error);
       return new Response('Error occured', {
