@@ -211,18 +211,19 @@
 // ЭТОТ WEBHOOK приходит из Clerk с этой страницы
 // https://clerk.com/docs/webhooks/sync-data
 // start === и end === уже сами дописывали 
+// ЭТИМ ХУКОМ сохраняем данные пользователя с Clerk на MongoDB, те этот хук как посредник
 
 
 //import { createOrUpdateUser, deleteUser } from '@/lib/actions/user'
 import { createOrUpdateUser, deleteUser } from '@/lib/actions/user'
 
-import { Webhook } from 'svix'
+import { Webhook } from 'svix' // svix нужен толко для соединения api route.js с hook 
 import { headers } from 'next/headers'
 //import { WebhookEvent } from '@clerk/nextjs/server'
 
 export async function POST(req) {
 
-  // SIGNING_SECRET для  URL https://next-auth-app-clerk-tau.vercel.app/
+  // SIGNING_SECRET для  URL https://next-auth-app-clerk-tau.vercel.app/api/webhooks
   const SIGNING_SECRET = process.env.SIGNING_SECRET
 
   if (!SIGNING_SECRET) {
@@ -281,9 +282,11 @@ export async function POST(req) {
 
 
   // start =================================
+  // на основе полученных данных по user из Clerk отправляем данные user в MongoDB используя код ниже
   if (eventType === 'user.created' || eventType === 'user.updated') {
     const { id, first_name, last_name, image_url, email_addresses, username } =
       evt?.data;
+      console.log(" 7777777777==============>", evt?.data)
     try {
       await createOrUpdateUser(
         id,
