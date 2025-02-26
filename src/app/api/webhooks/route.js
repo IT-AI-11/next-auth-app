@@ -283,10 +283,15 @@ export async function POST(req) {
 
   // start =================================
   // на основе полученных данных по user из Clerk отправляем данные user в MongoDB используя код ниже
+  // если user приходит из Clerk как 'user.created' или 'user.created' тогда trigger эту функцию     export const createOrUpdateUser = async ()
+  // если user приходит из Clerk как 'user.deleted' тогда trigger эту функцию     export const deleteUser = async (id) => {}
   if (eventType === 'user.created' || eventType === 'user.updated') {
-    const { id, first_name, last_name, image_url, email_addresses, username } =
-      evt?.data;
+
+    // получаем данные пришедшие с Clerk
+    const { id, first_name, last_name, image_url, email_addresses, username } = evt?.data;
       console.log(" 7777777777==============>", evt?.data)
+
+
     try {
       await createOrUpdateUser(
         id,
@@ -302,6 +307,25 @@ export async function POST(req) {
 
     } catch (error) {
       console.log('Error creating or updating user:', error);
+      return new Response('Error occured', {
+        status: 400,
+      });
+    }
+  }
+
+ // на основе полученных данных по user из Clerk отправляем данные user в MongoDB используя код ниже
+  if (eventType === 'user.deleted') {
+
+    const { id } = evt?.data;
+
+    try {
+      await deleteUser(id);
+      return new Response('User is deleted', {
+        status: 200,
+      });
+
+    } catch (error) {
+      console.log('Error deleting user:', error);
       return new Response('Error occured', {
         status: 400,
       });
